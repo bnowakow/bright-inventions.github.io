@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Bright Inventions</title>
+    <meta name="viewport" content="width=device-width">
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/foundation.css"/>
+    <link rel="stylesheet" href="/css/bootstrap.css"/>
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script src="/js/mandrill.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/json2/20121008/json2.min.js"></script>
+
+</head>
+<body>
+
+
+<div class="container-wrapper">
+
+
+    <div class="container">
+
+        <div class="page1 slide" id="home" >
+
+            <a href="" class="hiring-link">We're hiring!</a>
+
+            <img src="/img/logo2-bbd0415e96ee41bf17af3af4cb7e404c.png" class="logo"/>
+
+            <h1>We’re a studio in Poland with a team of great developers who build first-rate mobile apps.</h1>
+			<h1>Since we don't like bul*hit check out some stuff that we've done to understand what first-rate means to us.</h1>
+			<h1> And please don't believe us that those apps run like a charm - please test them yourself!</h1>
+			</div>
+            <!--<div class="row boxes">-->
+            <!--<div class="large-6 columns">-->
+            <!--<div class="panel">-->
+            <!--<p>We're hiring!</p>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="large-6 columns">-->
+            <!--<div class="panel">-->
+            <!--<p>Contact us!</p>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+
+
+            <a href="" class="ego-link" id="contact-us">Contact us</a>
+
+            <div class="footer">
+
+
+            </div>
+
+        </div>
+
+        <div id="contact-us-form" style="display:none" class="slide">
+            <a href="#" class="back-link contact-back-link">back to home page</a>
+
+            <form class="form-horizontal">
+
+                <label>
+                    Name
+                </label>
+
+                <input type="text" id="email-name" class="input-xlarge"/>
+
+                <label>
+                    Email
+                </label>
+                <input type="email" id="email-address" class="input-xlarge" required="true"/>
+
+                <label>
+                    Message
+                </label>
+                <textarea class="input-xlarge" id="email-message"></textarea>
+
+                <input type="submit" value="Send" class="btn btn-primary send-contact-mail">
+
+            </form>
+
+        </div>
+
+        <div id="hiring" style="display:none"  class="slide">
+            <a href="#" class="back-link hiring-back-link">back to home page</a>
+
+            <div class="hiring-message">
+                <p>We're on a constant lookout for top notch developers!</p>
+
+                <div style="padding-left:40px; padding-top:30px;">
+                <p >If you're </p>
+                <ul style="padding-left: 20px">
+                    <li>a full-stack developer</li>
+                    <li>iOS developer</li>
+                    <li>Android developer</li>
+                </ul>
+                </div>
+
+                <p style="width: 700px; margin-left:40px; margin-top: 40px;">contact us at <a href="mailto:info@brightinventions.pl">info@brightinventions.pl</a> and we'll arrange for a meeting!</p>
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- /container -->
+
+<script>
+
+    $("#contact-us").click(function () {
+        $(".slide").hide();
+        $("#contact-us-form").show();
+        return false;
+    });
+
+    $(".contact-back-link").click(function () {
+        $(".slide").hide();
+        $("#home").show();
+        return false;
+    });
+
+    $(".hiring-back-link").click(function () {
+        $(".slide").hide();
+        $("#home").show();
+        return false;
+    });
+
+    $(".hiring-link").click(function () {
+        $(".slide").hide();
+        $("#hiring").show();
+        return false;
+    });
+
+    $("#contact-us-form form").submit(function () {
+        sendMail();
+        return false;
+    });
+
+    function sendMail() {
+        var name = $("#email-name").val();
+        var email = $("#email-address").val();
+        var message = $("#email-message").val();
+
+
+        var m = new mandrill.Mandrill("dIVix98J5AD5HQ3aZmX6CQ");
+        var params = {
+            "message": {
+                "html": message,
+                "text": message,
+                "subject": "example subject",
+                "from_email": email,
+                "from_name": name,
+                "to": [
+                    {
+                        "email": "info@brightinventions.pl",
+                        "name": "Recipient Name"
+                    }
+                ],
+                "headers": {
+                    "Reply-To": email
+                },
+                "important": true
+            },
+            "async": false
+        };
+
+        var on_error = function () {
+            $("#contact-us-form ").removeClass('sending');
+            alert("Something went wrong");
+        };
+
+        var on_success = function () {
+            $("#contact-us-form ").removeClass('sending');
+            alert("Thanks! We will get back to you asap!");
+            $(".slide").hide();
+            $("#home").show();
+        };
+
+        $("#contact-us-form ").addClass('sending');
+        m.messages.send(params, on_success, on_error);
+
+    }
+
+</script>
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-29336006-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+/*****************************************************************************/
+/*
+/* Common
+/*
+/*****************************************************************************/
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+
+    font: 13.34px Helvetica, Arial, sans-serif;
+    font-size: small;
+    text-align: center;
+    -webkit-transition: all 1.5s ease;
+    -moz-transition: all 1.5s ease;
+    -o-transition: all 1.5s ease;
+    -ms-transition: all 1.5s ease;
+    transition: all 1.5s ease;
+
+background-color: #030F07;
+    background-image: url('../img/61.jpg');
+    background-repeat: no-repeat;
+    background-position: center -100px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    z-index: -1;
+
+
+}
+
+
+
+
+
+/* ******* */
+
+.container-wrapper {
+    /*height:700px;*/
+    min-height: 500px;
+    padding:50px;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto 0 auto;
+    background-color: white;
+    height: 100%;
+    padding:60px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+    /*text-shadow:2px 2px black;*/
+    font-size:40px;
+    margin-top:80px;
+    opacity: 0.9;
+}
+
+
+.logo {
+    margin-top: -15px;
+    margin-left: -25px;
+    width: 150px;
+    display: block;
+
+}
+
+.ego-link {
+    font-family: 'Raleway', sans-serif;
+    font-size: 36px;
+    margin-top: 50px;
+    display: block;
+}
+
+.hiring-link {
+    position: absolute;
+    top:20px;
+    right:20px;
+    background-color: #0099dd;
+    color:white;
+    padding: 5px 10px;
+    border-radius:5px;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    -ms-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+
+.hiring-link:hover {
+    background-color:white;
+    color:#0099dd;;
+    text-decoration: none;
+}
+
+
+#contact-us-form input,
+#contact-us-form textarea{
+    padding: 20px;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+}
+
+#contact-us-form label {
+    font-family: 'Raleway', sans-serif;
+    text-align: left;
+    margin-top: 20px;
+}
+
+
+#contact-us-form input.send-contact-mail {
+    margin-top: 40px;
+    width: 240px;
+    font-size: 22px;
+    margin-left:0px;
+    padding:12px;
+    font-weight: bold;
+}
+
+
+#contact-us-form {
+    -webkit-transition: all 1.5s ease;
+    -moz-transition: all 1.5s ease;
+    -o-transition: all 1.5s ease;
+    -ms-transition: all 1.5s ease;
+    transition: all 1.5s ease;
+}
+
+.sending {
+    opacity: 0.6;
+}
+
+.back-link {
+    position: absolute;
+    left:30px;
+    top:20px;
+}
+
+.hiring-message {
+    font-family: 'Raleway', sans-serif;
+    text-align: left;
+    font-size:24px;
+    margin-top: 50px;
+}
+
+.hiring-message ul li {
+    line-height: 200%;
+}
